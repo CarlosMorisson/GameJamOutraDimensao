@@ -6,6 +6,7 @@ public class MovimentacaoPlayer : GravidadePlayer
 {
     private float horizontal;
     private float speed = 8f;
+    public int PlayerID;
     private bool isFacingRight = true;
     //Dash
     //
@@ -21,6 +22,14 @@ public class MovimentacaoPlayer : GravidadePlayer
         if (Input.GetButtonUp("Jump") && rig.velocity.y > 0f)
         {
             rig.velocity = new Vector2(rig.velocity.x, rig.velocity.y * 0.5f);
+        }
+        if (horizontal>0 && IsGrounded())
+        {
+            //audio.audioPassos.Play();
+        }
+        else
+        {
+            //audio.audioPassos.Pause();
         }
         Flip();
         rig.velocity = new Vector2(horizontal * speed, rig.velocity.y);
@@ -38,5 +47,9 @@ public class MovimentacaoPlayer : GravidadePlayer
             localScale.x *= -1f;
             transform.localScale = localScale;
         }
+    }
+    private void AnimacaoPlayerBaixo()
+    {
+
     }
 }

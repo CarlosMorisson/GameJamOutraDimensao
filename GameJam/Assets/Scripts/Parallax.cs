@@ -23,7 +23,7 @@ public class Parallax : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
         Vector3 deltaMovement = cameraTransform.position - lastCameraPos;
         transform.position += new Vector3(deltaMovement.x * parallaxEffect.x, deltaMovement.y * parallaxEffect.y);

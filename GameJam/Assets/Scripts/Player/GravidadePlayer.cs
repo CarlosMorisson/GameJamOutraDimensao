@@ -7,8 +7,10 @@ public class GravidadePlayer : MonoBehaviour
     public Rigidbody2D rig;
     public bool estaEmbaixo;
     public float jumpForce = 5f;
+    [HideInInspector] public Audios audio;
     void Start()
     {
+        audio = FindObjectOfType<Audios>();
         if (estaEmbaixo)
             InverterColisao();
     }
